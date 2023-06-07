@@ -16,6 +16,7 @@
     /* = Colors = */
     /* Primary */
     --tomato: hsl(4, 100%, 67%);
+    --tomato-light: hsla(4, 100%, 67%, 0.2);
     /* Neutral */
     --dark-slate-grey: hsl(234, 29%, 20%);
     --charcoal-grey: hsl(235, 18%, 26%);
@@ -26,7 +27,6 @@
     --ff: "Roboto", sans-serif;
     --fs: 1rem; /* Paragraph */
 }
-
 
 /* = Styles = */
 body {
@@ -39,7 +39,6 @@ body {
     position: relative;
 }
 
-
 /* Subscribe content */
 #content_title {
     font-size: calc(var(--fs) * 2.375);
@@ -47,16 +46,61 @@ body {
 }
 
 #content_features_list {
-
+    padding-inline-start: 2.5rem;
+    gap: .75rem;
 }
 
 #list_feature {
-    list-style-image: url(/assets/images/icon-list.svg);
+    list-style-type: none;
 }
 
-#list_feature::marker {
-    background-color: red;
+#list_feature::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    background: url(/assets/images/icon-list.svg) no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
 }
+
+#form {
+    margin-block: 2.5rem;
+    transition: all .5s ease-in-out;
+}
+
+#form_label {
+    font-size: calc(var(--fs) / 1.45);
+}
+
+#form_label::after {
+    content: "Valid email required";
+    float: right;
+    color: var(--tomato);
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+#form_email::placeholder {
+    color: var(--grey);
+}
+
+#form_email:invalid {
+    border-color: var(--tomato);
+    color: var(--tomato);
+    background-color: var(--tomato-light);
+}
+
+#form_email:invalid::placeholder {
+    color: var(--tomato);
+}
+
+#form_btn {
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    font-size: calc(var(--fs) / 1.05);
+}
+
 
 
 

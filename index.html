@@ -31,7 +31,8 @@
         <p id="content_description">
           Join 60,000+ product managers receiving monthly updates on:
         </p>
-        <ul id="content_features_list">
+        <ul id="content_features_list"
+        class="my-4 d-flex flex-column">
           <li id="list_feature">
             Product discovery and building what matters
           </li>
@@ -42,15 +43,19 @@
             And much more!
           </li>
         </ul>
-        <form action="#" id="form">
-          <label for="email" id="form_label">
+        <form id="form"
+        class="d-flex flex-column mb-0">
+          <label for="email" id="form_label"
+          class="form-label fw-bold">
             Email address
           </label>
           <input 
           type="email" 
           id="form_email" 
-          placeholder="email@company.com">
-          <button type="submit" id="form_btn">
+          placeholder="email@company.com"
+          class="form-control py-3 px-4">
+          <button type="submit" id="form_btn"
+          class="my-4 btn fw-bold py-3">
             Subscribe to monthly newsletter
           </button>
         </form>
