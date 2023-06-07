@@ -17,6 +17,7 @@
     /* Primary */
     --tomato: hsl(4, 100%, 67%);
     --tomato-light: hsla(4, 100%, 67%, 0.2);
+    --btn-gradient: linear-gradient(90deg, hsl(346, 100%, 66%), hsl(13, 100%, 62%));
     /* Neutral */
     --dark-slate-grey: hsl(234, 29%, 20%);
     --charcoal-grey: hsl(235, 18%, 26%);
@@ -32,11 +33,15 @@
 body {
     font-family: var(--ff);
     font-size: var(--fs);
+    background-color: var(--dark-slate-grey);
     color: var(--dark-slate-grey);
+    min-height: 100vh;
 }
 
 #main {
     position: relative;
+    background-color: var(--white);
+    width: fit-content;
 }
 
 /* Subscribe content */
@@ -48,6 +53,7 @@ body {
 #content_features_list {
     padding-inline-start: 2.5rem;
     gap: .75rem;
+    position: relative;
 }
 
 #list_feature {
@@ -57,7 +63,7 @@ body {
 #list_feature::before {
     content: "";
     position: absolute;
-    left: 1.5rem;
+    left: .125rem;
     background: url(/assets/images/icon-list.svg) no-repeat;
     width: 1.5rem;
     height: 1.5rem;
@@ -97,6 +103,8 @@ body {
     background-color: var(--dark-slate-grey);
     color: var(--white);
     font-size: calc(var(--fs) / 1.05);
+    border: none;
+    border-radius: .5rem;
 }
 
 /* Success */
@@ -124,6 +132,42 @@ body {
     margin-bottom: 3.5rem;
 }
 
+/* Media queries */
+@media screen and (min-width: 1024px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main {
+        padding: 1.5rem;
+        padding-left: 2.5rem;
+        border-radius: 2rem;
+    }
+
+    #subscribe {
+        gap: 2.5rem;
+    }
+
+    #subscribe_content {
+        max-width: 23.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #content_title {
+        font-size: calc(var(--fs) * 3.25);
+    }
+
+    #form_btn:hover, 
+    #success_btn:hover {
+        background: var(--btn-gradient);
+        background-position-x: -25rem;
+        background-repeat: no-repeat;
+        animation: gradientAnimation 1s ease-out forwards;
+    }
+}
+
 
 
 
@@ -149,5 +193,15 @@ body {
     to {
         transform: rotateY(0deg);
         backface-visibility: visible;
+    }
+}
+
+@keyframes gradientAnimation {
+    from {
+        background-position-x: -23rem;
+    }
+
+    to {
+        background-position-x: 0;
     }
 }
