@@ -47,14 +47,15 @@
         class="d-flex flex-column mb-0">
           <label for="email" id="form_label"
           class="form-label fw-bold">
-            Email address
+            Email address 
+            <span class="float-end">Valid email required</span>
           </label>
           <input 
           type="email" 
           id="form_email" 
           placeholder="email@company.com"
           class="form-control py-3 px-4">
-          <button type="submit" id="form_btn"
+          <button id="form_btn"
           class="my-4 btn fw-bold py-3">
             Subscribe to monthly newsletter
           </button>
@@ -72,20 +73,27 @@
     </section>
 
     <!-- Success -->
-    <section id="success">
+    <section id="success"
+    class="d-flex flex-column mx-4">
+    <div>
       <img 
       src="/assets/images/icon-success.svg" 
       alt="check icon"
-      id="success_img">
-      <h2 id="success_title">Thanks for subscribing!</h2>
-      <p id="success_description">
+      id="success_img"
+      class="mb-4">
+      <h2 id="success_title"
+      class="fw-bold mt-3">Thanks for subscribing!</h2>
+      <p id="success_description"
+      class="mt-3">
         A confirmation email has been sent to
         <strong id="success_email_sent">
           ash@loremcompany.com
         </strong>
         . Please open it and click the button inside to confirm your subscription.
       </p>
-      <button id="success_btn">Dismiss message</button>
+    </div>
+    <button id="success_btn"
+    class="btn fw-bold py-3 mt-auto">Dismiss message</button>
     </section>
   </main>
 

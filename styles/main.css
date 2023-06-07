@@ -65,18 +65,15 @@ body {
 
 #form {
     margin-block: 2.5rem;
-    transition: all .5s ease-in-out;
 }
 
 #form_label {
     font-size: calc(var(--fs) / 1.45);
 }
 
-#form_label::after {
-    content: "Valid email required";
-    float: right;
+#form_label span {
+    transition: all .5s ease-in-out;
     color: var(--tomato);
-
     visibility: hidden;
     opacity: 0;
 }
@@ -95,33 +92,43 @@ body {
     color: var(--tomato);
 }
 
-#form_btn {
+#form_btn,
+#success_btn {
     background-color: var(--dark-slate-grey);
     color: var(--white);
     font-size: calc(var(--fs) / 1.05);
 }
 
-
-
-
-
-
+/* Success */
 
 #success {
     position: absolute;
+    height: 100%;
     top: 0;
     left: 0;
-
+    bottom: 0;
+    padding-top: 9rem;
     transform: rotateY(180deg);
     backface-visibility: hidden;
+}
+
+#success_img {
+    max-width: 4rem;
+}
+
+#success_title {
+    font-size: calc(var(--fs) * 2.375);
+}
+
+#success_btn {
+    margin-bottom: 3.5rem;
 }
 
 
 
 
-
 /* Animations */
-@keyframes cardRotation {
+@keyframes cardRotationHide {
     from {
         transform: rotateY(0deg);
         backface-visibility: visible;
@@ -130,5 +137,17 @@ body {
     to {
         transform: rotateY(180deg);
         backface-visibility: hidden;
+    }
+}
+
+@keyframes cardRotationShow {
+    from {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
+
+    to {
+        transform: rotateY(0deg);
+        backface-visibility: visible;
     }
 }
