@@ -1,0 +1,33 @@
+/* Custom properties */
+
+/* = Font = */
+@font-face {
+    font-family: 'YourFontName';
+    src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'YourFontName';
+    src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+:root {
+    /* = Colors = */
+    /* Primary */
+    --tomato: hsl(4, 100%, 67%);
+    /* Neutral */
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+
+    /* = Font = */
+    --ff: "Roboto", sans-serif;
+    --fs: 1rem; /* Paragraph */
+}
+
+body {
+    font-family: var(--ff);
+    font-size: var(--fs);
+}
