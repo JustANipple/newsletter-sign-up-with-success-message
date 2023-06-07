@@ -17,13 +17,45 @@
   <!-- Script -->
   <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
 
-  <main>
-
+  <main id="main">
     <!-- Subscribe -->
-    <section>
-      <picture>
+    <section id="subscribe"
+    class="d-flex flex-wrap-reverse">
+      <div id="subscribe_content"
+      class="mx-4">
+        <h1 id="content_title"
+        class="fw-bold">Stay updated!</h1>
+        <p id="content_description">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul id="content_features_list">
+          <li id="list_feature">
+            Product discovery and building what matters
+          </li>
+          <li id="list_feature">
+            Measuring to ensure updates are a success
+          </li>
+          <li id="list_feature">
+            And much more!
+          </li>
+        </ul>
+        <form action="#" id="form">
+          <label for="email" id="form_label">
+            Email address
+          </label>
+          <input 
+          type="email" 
+          id="form_email" 
+          placeholder="email@company.com">
+          <button type="submit" id="form_btn">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+      <picture id="subscribe_img">
         <source 
         srcset="/assets/images/illustration-sign-up-desktop.svg"
         media="(min-width: 768px)">
@@ -32,39 +64,24 @@
         alt=""
         aria-hidden="true">
       </picture>
-      <h1>Stay updated!</h1>
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul>
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
-      <form action="#">
-        <label for="email">Email address</label>
-        <input 
-        type="email" 
-        id="email" 
-        placeholder="email@company.com">
-        <button type="submit">Subscribe to monthly newsletter</button>
-      </form>
     </section>
 
     <!-- Success -->
-    <section>
+    <section id="success">
       <img 
       src="/assets/images/icon-success.svg" 
-      alt="check icon">
-      <h2>Thanks for subscribing!</h2>
-      <p>
+      alt="check icon"
+      id="success_img">
+      <h2 id="success_title">Thanks for subscribing!</h2>
+      <p id="success_description">
         A confirmation email has been sent to
-        <strong>
+        <strong id="success_email_sent">
           ash@loremcompany.com
         </strong>
         . Please open it and click the button inside to confirm your subscription.
       </p>
-      <button>Dismiss message</button>
+      <button id="success_btn">Dismiss message</button>
     </section>
-
   </main>
 
 </body>

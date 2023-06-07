@@ -27,7 +27,64 @@
     --fs: 1rem; /* Paragraph */
 }
 
+
+/* = Styles = */
 body {
     font-family: var(--ff);
     font-size: var(--fs);
+    color: var(--dark-slate-grey);
+}
+
+#main {
+    position: relative;
+}
+
+
+/* Subscribe content */
+#content_title {
+    font-size: calc(var(--fs) * 2.375);
+    margin-block: 2.5rem 1rem;
+}
+
+#content_features_list {
+
+}
+
+#list_feature {
+    list-style-image: url(/assets/images/icon-list.svg);
+}
+
+#list_feature::marker {
+    background-color: red;
+}
+
+
+
+
+
+
+#success {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+
+
+
+
+/* Animations */
+@keyframes cardRotation {
+    from {
+        transform: rotateY(0deg);
+        backface-visibility: visible;
+    }
+
+    to {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+    }
 }
