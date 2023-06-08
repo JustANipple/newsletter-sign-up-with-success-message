@@ -31,18 +31,27 @@
     --fs: 1rem; /* Paragraph */
 }
 
+html, body {
+    height: 100vh;
+}
+
 /* = Styles = */
 body {
     font-family: var(--ff);
     font-size: var(--fs);
     background-color: var(--charcoal-grey);
     color: var(--dark-slate-grey);
-    min-height: 100vh;
+    height: 100%;
     position: relative;
+}
+
+#wrapper {
+    height: fit-content;
 }
 
 #subscribe {
     background-color: var(--white);
+    overflow: hidden;
 }
 
 /* Subscribe content */
@@ -140,11 +149,11 @@ body {
 }
 
 /* Media queries */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     body {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
     }
 
     #subscribe {
