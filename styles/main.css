@@ -108,6 +108,10 @@ body {
     border-radius: .5rem;
 }
 
+#form_btn {
+    margin-bottom: 2.75rem !important;
+}
+
 /* Success */
 
 #success {
