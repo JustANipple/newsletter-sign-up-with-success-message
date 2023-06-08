@@ -3,12 +3,12 @@
 /* = Font = */
 @font-face {
     font-family: 'YourFontName';
-    src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('assets/fonts/Roboto-Regular.ttf') format('truetype');
     font-weight: normal;
 }
 @font-face {
     font-family: 'YourFontName';
-    src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
+    src: url('assets/fonts/Roboto-Bold.ttf') format('truetype');
     font-weight: bold;
 }
 
@@ -17,7 +17,9 @@
     /* Primary */
     --tomato: hsl(4, 100%, 67%);
     --tomato-light: hsla(4, 100%, 67%, 0.2);
-    --btn-gradient: linear-gradient(90deg, hsl(346, 100%, 66%), hsl(13, 100%, 62%));
+    --btn-gradient: linear-gradient(90deg, 
+    hsl(346, 100%, 66%), 
+    hsl(13, 100%, 62%));
     /* Neutral */
     --dark-slate-grey: hsl(234, 29%, 20%);
     --charcoal-grey: hsl(235, 18%, 26%);
@@ -33,15 +35,14 @@
 body {
     font-family: var(--ff);
     font-size: var(--fs);
-    background-color: var(--dark-slate-grey);
+    background-color: var(--charcoal-grey);
     color: var(--dark-slate-grey);
     min-height: 100vh;
+    position: relative;
 }
 
-#main {
-    position: relative;
+#subscribe {
     background-color: var(--white);
-    width: fit-content;
 }
 
 /* Subscribe content */
@@ -64,7 +65,7 @@ body {
     content: "";
     position: absolute;
     left: .125rem;
-    background: url(/assets/images/icon-list.svg) no-repeat;
+    background: url(../assets/images/icon-list.svg) no-repeat;
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -114,10 +115,12 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    right: 0;
     bottom: 0;
     padding-top: 9rem;
     transform: rotateY(180deg);
     backface-visibility: hidden;
+    background-color: var(--white);
 }
 
 #success_img {
@@ -140,7 +143,7 @@ body {
         align-items: center;
     }
 
-    #main {
+    #subscribe {
         padding: 1.5rem;
         padding-left: 2.5rem;
         border-radius: 2rem;
@@ -164,23 +167,41 @@ body {
         background: var(--btn-gradient);
         background-position-x: -25rem;
         background-repeat: no-repeat;
-        animation: gradientAnimation 1s ease-out forwards;
+        animation: gradientAnimation 1s ease-in-out forwards;
+    }
+
+    #success {
+        padding-block: 3rem;
+        padding-inline: 4rem !important;
+        max-width: 31rem;
+        margin-block: auto;
+        height: fit-content;
+        border-radius: 2rem;
+    }
+
+    #success_title {
+        font-size: calc(var(--fs) * 3.25);
+    }
+
+    #success_btn {
+        margin-top: 1.5rem !important;
+        margin-bottom: 0 !important;
+        width: 100%;
     }
 }
-
-
-
 
 /* Animations */
 @keyframes cardRotationHide {
     from {
         transform: rotateY(0deg);
         backface-visibility: visible;
+        -webkit-backface-visibility: visible;
     }
 
     to {
         transform: rotateY(180deg);
         backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 }
 
@@ -188,20 +209,23 @@ body {
     from {
         transform: rotateY(180deg);
         backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     to {
         transform: rotateY(0deg);
         backface-visibility: visible;
+        -webkit-backface-visibility: visible;
     }
 }
 
 @keyframes gradientAnimation {
     from {
-        background-position-x: -23rem;
+        background-position-x: -25rem;
     }
 
     to {
         background-position-x: 0;
+        box-shadow: 0 1rem 1.5rem -.5rem var(--tomato);
     }
 }
